@@ -1,12 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import srtreamlit as st
+import streamlit as st
 
 # Header
 st.header('Habibah : sparkles :')
 st.subheader('Plot')
 
-x = np.linspace(-2 * np.pi, 2 * np.pi, 1000) # Generatintg x values from -2*
+x = np.linspace(-2*np.pi, 2*np.pi, 1000) # Generatintg x values from -2*
 y = np.sin(x) # Calculating sin(x) values
 z = np.cos(x) # Calculating sin(x) values
 
@@ -16,7 +16,7 @@ ax.plot(x, z, label='cos(x)', color='g') # Plotting sin(x) curve
 ax.set_ylabel("")
 ax.set_xlabel("x")
 ax.tick_params(axis='y', labelsize=20)
-az.set_xticklabels(ax.get_ticklabels(), rotation=39, ha='right')
+az.set_xticklabels(ax.get_ticklabels(), rotation=30, ha='right')
 ax.tick_params(axis='x', labelsize=15)
 
 st.pyplot(fig)
