@@ -46,7 +46,7 @@ with col2:
   y = np.cos(x) # Calculating sin(x) values
 
   fig, ax = plt.subplots(figsize=(16, 8))
-  ax.plot(x, y, label='sin(x)', color='b') # Plotting sin(x) curve
+  ax.plot(x, y, label='cos(x)', color='b') # Plotting sin(x) curve
   ax.set_ylabel("Cos x")
   ax.set_xlabel("x")
   ax.tick_params(axis='y', labelsize=20)
