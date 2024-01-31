@@ -42,6 +42,7 @@ with col1:
   st.pyplot(fig)
 
 with col2:
+  st.caption('Plot Cos')
   x = np.linspace(-2*np.pi, 2*np.pi, 1000) # Generating x values from -2*pi
   y = np.cos(x) # Calculating sin(x) values
 
