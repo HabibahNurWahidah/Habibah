@@ -10,7 +10,7 @@ with c1:
 
 with c2:
     # Pilih operasi
-    operation = st.selectbox('Pilih operasi', ('+', '-', 'x', '/'))
+    operation = st.selectbox('Pilih operasi', ('+', '-', '*', '/'))
 
 with c3:
     num2 = st.number_input('Masukkan angka kedua', step=1)
@@ -20,7 +20,7 @@ def calculate(num1, num2, operation):
         result = num1 + num2
     elif operation == '-':
         result = num1 - num2
-    elif operation == 'x':
+    elif operation == '*':
         result = num1 * num2
     elif operation == '/':
         if num2 != 0:  # Menghindari pembagian dengan nol
