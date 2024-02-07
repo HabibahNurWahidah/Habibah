@@ -15,7 +15,7 @@ with c1:
 
 # Kolom kedua
 with c2:
-    unit = st.selectbox('Unit', ('+', '-', 'x', '/')
+    unit = st.selectbox('Pilih Unit', ('+', '-', 'x', '/'))
 
 # Kolom ketiga
 with c3:
