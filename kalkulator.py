@@ -15,3 +15,4 @@ with c2:
 
 sr.write(x,' ',satuan,'= ',' ')
 
+st.caption('Copyright © Habibah Nur Wahidah 2024')
