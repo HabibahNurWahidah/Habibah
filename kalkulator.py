@@ -4,37 +4,38 @@ import streamlit as st
 st.header('Habibah :sparkles:')
 
 # Subheader
-st.subheader('Plot')
+st.subheader('Kalkulator')
 
 # Membuat dua kolom
-c1, c2, c3= st.columns(3)
+c1, c2, c3 = st.columns(3)
 
 # Kolom pertama
 with c1:
-    num1 = st.number_input('Masukkan angka pertama', value=1)
+    num1 = st.number_input('Masukkan angka pertama', step=1)
 
 # Kolom kedua
 with c2:
-    unit = st.selectbox('Pilih Unit', ('+', '-', 'x', '/'))
+    operation = st.selectbox('Pilih Operation', ('+', '-', 'x', '/'))
 
 # Kolom ketiga
 with c3:
-    num2 = st.number_input('Masukkan angka kedua', value=1)
-def calculate(num1, num2, unit):
-    if unit == '+':
+    num2 = st.number_input('Masukkan angka kedua', step=1)
+    
+def calculate(num1, num2, operation):
+    if operation == '+':
         result = num1 + num2
-    elif unit == '-':
+    elif operation == '-':
         result = num1-num2
-    elif unit == 'x':
+    elif operation == 'x':
         result = num1*num2
-    elif unit == '/':
+    elif operation == '/':
         if num2 !=0: #Menghindari pembagian dengan nol
             result = num1/num2
         else :
             result = "Error:Pembagian dengan nol"
             return result
             
-result = calculate(num1,num2,unit)
+result = calculate (num1, num2, operation)
 st.write('Hasil:',result)
 
 st.caption('Copyright © Habibah Nur Wahidah 2024')
