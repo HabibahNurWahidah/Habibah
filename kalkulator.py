@@ -10,7 +10,7 @@ with c1:
   x = st.number_input('Suhu',value=100)
   st.write('=>:')
 with c2:
-  satuan = st.selectbox(
+  satuan = st.selectbox
     ('C', 'F', 'R', 'K'),key='k1')
 
 sr.write(x,' ',satuan,'= ',' ')
