@@ -11,14 +11,30 @@ c1, c2, c3= st.columns(3)
 
 # Kolom pertama
 with c1:
-    x = st.number_input('Masukkan angka pertama', value=100)
+    num1 = st.number_input('Masukkan angka pertama', value=1)
 
 # Kolom kedua
 with c2:
-    unit = st.selectbox('Unit', ('C', 'F', 'R', 'K'), key='k1')
+    unit = st.selectbox('Unit', ('+', '-', 'x', '/'), key='k1')
 
+# Kolom ketiga
+with c3:
+    num2 = st.number_input('Masukkan angka kedua', value=1)
+def calculate(num1, num2, unit):
+    if unit == '+':
+        result = num1 + num2
+    elif unit == '-':
+        result = num1-num2
+    elif unit == 'x':
+        result = num1*num2
+    elif unit == '/':
+        if num2 !=0: #Menghindari pembagian dengan nol
+            result = num1/num2
+        else :
+            result = "Error:Pembagian dengan nol"
+     return result
 
-# Menampilkan hasil input
-st.write(x, unit)
+result = calculate(num1,num2,unit)
+st.write('Hasil:',result)
 
 st.caption('Copyright © Habibah Nur Wahidah 2024')
