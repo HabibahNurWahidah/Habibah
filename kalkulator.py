@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header('Habibah Cantik :love:')
+st.header('Habibah Cantik : sparkle:')
 st.subheader('Kalkulator')
 
 c1, c2, c3 = st.columns(3)
