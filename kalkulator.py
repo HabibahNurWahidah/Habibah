@@ -31,3 +31,5 @@ def calculate(num1, num2, operation):
 
 result = calculate(num1, num2, operation)
 st.write('Hasil:', result)
+
+st.caption('Copyright © Habibah Nur Wahidah 2024')
