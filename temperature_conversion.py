@@ -1,3 +1,8 @@
+import streamlit as st
+
+st.header('Habibah :heart:')
+st.subheader('Suhu')
+
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9/5) + 32
 
