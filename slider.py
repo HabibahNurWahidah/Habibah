@@ -54,5 +54,7 @@ st.pyplot(fig2)
 
 st.write(f'Integral (using trapezoidal rule) of sin(t) within selected range: {integral_u}')
 st.write(f'Integral (using trapezoidal rule) of f(t) within selected range: {integral_v}')
+st.write(f'Integral (using trapezoidal rule) of sin(t) within selected range {integration_range}: {integral_u}')
+st.write(f'Integral (using trapezoidal rule) of f(t) within selected range {integration_range}: {integral_v}')
 
 
