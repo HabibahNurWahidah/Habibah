@@ -7,6 +7,9 @@ st.write('nilai x:', x)
 y = st.slider('Set nilai',0.0, 10.0, 5.0)
 st.write('nilai y:', y)
 
+integration_range = st.slider('Pilih rentang integrasi', x[0], x[1], (x[0], x[1]))
+st.write('Rentang Integrasi:', integration_range)
+
 t = np.linspace(x[0]*np.pi, x[1]*np.pi, 100)
 u = np.sin(y*t)
 
@@ -16,14 +19,17 @@ def f(x):
 
 v = f(t)
 
-# Compute integral using trapezoidal rule for u
-integral_u = np.trapz(u, t)
-# Compute integral using trapezoidal rule for v
-integral_v = np.trapz(v, t)
+# Compute integral using trapezoidal rule for u within integration_range
+mask_u = (t >= integration_range[0]*np.pi) & (t <= integration_range[1]*np.pi)
+integral_u = np.trapz(u[mask_u], t[mask_u])
+
+# Compute integral using trapezoidal rule for v within integration_range
+mask_v = (t >= integration_range[0]*np.pi) & (t <= integration_range[1]*np.pi)
+integral_v = np.trapz(v[mask_v], t[mask_v])
 
 fig1, ax1 = plt.subplots(figsize=(16, 8))
 ax1.plot(t, u, label='sin(t)', color='b')  # Plotting sin(t) curve
-ax1.fill_between(t, 0, u, alpha=0.2, color='b', label='Integral of sin(t)')  # Fill the area under the curve for integral of sin(t)
+ax1.fill_between(t[mask_u], 0, u[mask_u], alpha=0.2, color='b', label='Integral of sin(t)')  # Fill the area under the curve for integral of sin(t)
 ax1.set_ylabel("")
 ax1.set_xlabel("t")
 ax1.tick_params(axis='y', labelsize=20)
@@ -34,7 +40,7 @@ plt.legend()  # Show legend for fig1
 
 fig2, ax2 = plt.subplots(figsize=(16, 8))
 ax2.plot(t, v, label='f(t)', color='r')     # Plotting f(t) curve
-ax2.fill_between(t, 0, v, alpha=0.2, color='r', label='Integral of f(t)')  # Fill the area under the curve for integral of f(t)
+ax2.fill_between(t[mask_v], 0, v[mask_v], alpha=0.2, color='r', label='Integral of f(t)')  # Fill the area under the curve for integral of f(t)
 ax2.set_ylabel("")
 ax2.set_xlabel("t")
 ax2.tick_params(axis='y', labelsize=20)
@@ -46,5 +52,5 @@ plt.legend()  # Show legend for fig2
 st.pyplot(fig1)
 st.pyplot(fig2)
 
-st.write(f'Integral (using trapezoidal rule) of sin(t): {integral_u}')
-st.write(f'Integral (using trapezoidal rule) of f(t): {integral_v}')
+st.write(f'Integral (using trapezoidal rule) of sin(t) within selected range: {integral_u}')
+st.write(f'Integral (using trapezoidal rule) of f(t) within selected range: {integral_v}')
