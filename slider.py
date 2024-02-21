@@ -15,7 +15,7 @@ u = np.sin(y*t)
 
 # Calculate f(x) = 2x^2 + 9x - 2
 def f(x):
-    return 2*x**2 + 9*x - 2
+    return 14*x**2 + 21*x - 18
 
 v = f(t)
 
