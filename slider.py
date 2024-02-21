@@ -16,9 +16,13 @@ def f(x):
 
 v = f(t)
 
+# Compute integral using trapezoidal rule
+integral = np.trapz(v, t)
+
 fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(t, u, label='sin(t)', color='b')  # Plotting sin(t) curve
 ax.plot(t, v, label='f(t)', color='r')     # Plotting f(t) curve
+ax.fill_between(t, 0, v, alpha=0.2, color='r', label='Integral')  # Fill the area under the curve for integral
 ax.set_ylabel("")
 ax.set_xlabel("t")
 ax.tick_params(axis='y', labelsize=20)
@@ -27,3 +31,5 @@ ax.tick_params(axis='x', labelsize=15)
 plt.grid(color='green', linestyle='-.', linewidth=.5)
 plt.legend()  # Show legend
 st.pyplot(fig)
+
+st.write(f'Integral (using trapezoidal rule): {integral}')
