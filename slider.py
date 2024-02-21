@@ -52,9 +52,9 @@ plt.legend()  # Show legend for fig2
 st.pyplot(fig1)
 st.pyplot(fig2)
 
-st.write(f'Integral (dengan aturan trapesium) dari sin(t) dalam rentang yang dipilih: {integral_u}')
-st.write(f'Integral (using trapezoidal rule) of f(t) within selected range: {integral_v}')
-st.write(f'Integral (using trapezoidal rule) of sin(t) within selected range {integration_range}: {integral_u}')
-st.write(f'Integral (using trapezoidal rule) of f(t) within selected range {integration_range}: {integral_v}')
+st.write(f'Integral (dengan aturan trapesium) dari sin(t): {integral_u}')
+st.write(f'Integral (dengan aturan trapesium) dari sin(t): {integral_v}')
+st.write(f'Integral (dengan aturan trapesium) dari sin(t) dalam rentang yang dipilih: {integration_range}: {integral_u}')
+st.write(f'Integral (dengan aturan trapesium) dari sin(t) dalam rentang yang dipilih:: {integration_range}: {integral_v}')
 
 
