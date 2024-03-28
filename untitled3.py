@@ -17,6 +17,8 @@ df.head()
 
 df.info()
 
+pip install scikit-learn
+
 # Split the data into training and testing sets
 from sklearn.model_selection import train_test_split
 
