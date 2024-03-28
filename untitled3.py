@@ -11,7 +11,7 @@ Original file is located at
 # Prediksi
 import pandas as pd
 
-df = pd.read_csv('/content/Heart_Disease_Prediction.csv')
+df = pd.read_csv('Heart_Disease_Prediction.csv')
 
 df.head()
 
