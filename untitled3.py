@@ -17,31 +17,6 @@ df.head()
 
 df.info()
 
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-sns.countplot(x=df['Heart Disease'],hue='Sex',data=df)
-
-sns.barplot(x=df['Heart Disease'],y=df['Exercise angina'],data=df)
-
-sns.barplot(x=df['Sex'],y=df['Exercise angina'],hue='Sex',data=df)
-
-sns.barplot(x=df['Sex'],y=df['Cholesterol'],hue='Sex',data=df)
-
-sns.barplot(x=df['Heart Disease'],y=df['Cholesterol'],hue='Heart Disease',data=df)
-
-sns.lineplot(x=df['Age'],y=df['Cholesterol'],data=df)
-
-sns.lineplot(x=df['Age'],y=df['ST depression'],data=df)
-
-sns.barplot(x=df['Heart Disease'],y=df['ST depression'],data=df)
-
-sns.heatmap(df.corr())
-
-# Split the data into features (X) and target variable (y)
-X = df.drop(columns=['Heart Disease'])
-y = df['Heart Disease'].map({'Presence': 1, 'Absence': 0})
-
 # Split the data into training and testing sets
 from sklearn.model_selection import train_test_split
 
